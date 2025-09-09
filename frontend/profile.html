@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anjum Meher Mulla | Portfolio</title>
+  <style>
+    :root {
+      --primary: #ff6b6b;
+      --accent: #ffb900;
+      --bg: linear-gradient(135deg, #1e3c72, #2a5298);
+      --glass: rgba(255, 255, 255, 0.15);
+      --text: #fff;
+      --shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(120deg, #ff6b6b, #f06595);
+      color: #fff;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: var(--shadow);
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      animation: fadeDown 1s ease-in-out;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      animation: fadeUp 1.2s ease-in-out;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--accent); }
+    .container {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      
+      color: var(--accent);
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      margin: 0.5rem auto;
+      border-radius: 2px;
+    }
+    /* About */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+    .about:hover { transform: scale(1.02); }
+    .about-img {
+      flex: 1 1 220px;
+      text-align: center;
+    }
+    .about-img img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      border: 4px solid #fff;
+    }
+    .about-text { flex: 2; }
+    /* Skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .skill-card {
+      background: var(--glass);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      color: #fff;
+      min-width: 120px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .skill-card:hover {
+      transform: translateY(-6px) scale(1.05);
+      background: var(--accent);
+      color: #222;
+    }
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform 0.3s;
+      background: var(--glass);
+      
+    }
+    .project-card:hover { transform: translateY(-8px) scale(1.03); }
+    .project-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-content {
+      padding: 1.2rem;
+      color: #fff;
+    }
+    .project-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .project-desc {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    .project-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .project-link:hover { color: #fff; }
+    /* Contact */
+    form {
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: var(--shadow);
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 8px;
+     
+    }
+    form button {
+      background: var(--accent);
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form button:hover { background: #ffd43b; }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(0,0,0,0.3);
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    /* Achievements Section */
+#achievements {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #f1f1f1;
+    text-align: center;
+    border-radius: 15px;
+    margin: 40px auto;
+    max-width: 900px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  #achievements .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #ffcc00;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  #achievements ul {
+    
+    padding: 0;
+    margin: 0;
+  }
+  
+  #achievements ul li {
+    background: rgba(255, 255, 255, 0.05);
+    margin: 12px auto;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border-left: 5px solid #ffcc00;
+    border-radius: 10px;
+    text-align: left;
+    max-width: 700px;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  #achievements ul li:hover {
+    transform: translateX(10px);
+    background: rgba(255, 204, 0, 0.15);
+    cursor: pointer;
+  }
+  
+    /* Animations */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 700px) {
+      .about { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Anjum Meher Mulla</h1>
+    <p>3rd Year CSE (AI & ML) | Passionate in Machine Learning</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="about" class="about">
+      <div class="about-img">
+        <img src="img.jpg" alt="Anjum Meher Mulla">
+      </div>
+      <div class="about-text">
+        <h2 class="section-title">About Me</h2>
+        <p>
+          Hi! I'm Anjum, currently pursuing 3rd year in CSE (AI & ML) at SRIT.
+          I am passionate about Machine Learning and love creating intelligent, scalable solutions.
+          I enjoy working on modern web apps, AI-driven projects, and solving real-world problems.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills">
+        <div class="skill-card">HTML</div>
+        <div class="skill-card">CSS</div>
+        <div class="skill-card">JavaScript</div>
+        <div class="skill-card">Python</div>
+        <div class="skill-card">Git & GitHub</div>
+        <div class="skill-card">MongoDB</div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <img class="project-img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" alt="ClauseWise">
+          <div class="project-content">
+            <div class="project-title">ClauseWise – AI Legal Assistant</div>
+            <div class="project-desc">An AI-powered legal assistant that helps analyze contracts, clauses, and legal documents using NLP and ML.</div>
+            <a class="project-link" href="#" target="_blank">View Project</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img class="project-img" src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=600&q=80" alt="Portfolio">
+          <div class="project-content">
+            <div class="project-title">Personal Portfolio</div>
+            <div class="project-desc">A responsive portfolio website showcasing my skills, projects, and achievements.</div>
+            <a class="project-link" href="#" target="_blank">View Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="achievements">
+        <h2 class="section-title">Achievements & Certifications</h2>
+        <ul>
+          <li>Completed Google Cloud Cybersecurity Course</li>
+          <li>Deloitte Data Analytics Job Simulation</li>
+          <li>AWS cloud virtual internship</li>
+        </ul>
+      </section>
+      
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Anjum Meher Mulla. All rights reserved.
+  </footer>
+</body>
+</html>
