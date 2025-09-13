@@ -1,4 +1,4 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,6 +13,14 @@ DOCTYPE html>
         <button id="fetchBtn">Get Weather</button>
         <div id="weather"></div>
         <div id="userList"></div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#fetchBtn").click(function(){
+                $("h2").text("responding");
+            });
+        });
+        </script>
 
     </section>
     <script src="script.js"></script>
